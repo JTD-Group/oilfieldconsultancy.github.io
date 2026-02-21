@@ -17,6 +17,13 @@
   --max: 1120px;
 }
 
+/* Ensure HTML hidden attribute always hides elements (author CSS can override UA defaults) */
+[hidden] { display: none !important; }
+
+/* or if you want to scope it to modals only:
+.modal[hidden] { display: none !important; }
+*/
+
 *{ box-sizing:border-box; }
 html,body{ height:100%; }
 body{
