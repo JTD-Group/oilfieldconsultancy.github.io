@@ -353,6 +353,7 @@ a:hover{ text-decoration:underline; text-decoration-color: rgba(11,94,215,.45); 
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
+
 .photo-break img{
   position:absolute;
   inset:0;
@@ -360,28 +361,24 @@ a:hover{ text-decoration:underline; text-decoration-color: rgba(11,94,215,.45); 
   height:100%;
   object-fit: cover;
   filter: saturate(1.05);
+  display:block;
+  z-index: 0;
 }
+
 .photo-break-overlay{
   position:absolute;
   inset:0;
   background: linear-gradient(90deg, rgba(11,94,215,.74), rgba(209,27,42,.50));
   mix-blend-mode: multiply;
+  z-index: 1;
+  pointer-events: none;
 }
+
 .photo-break-content{
   position: relative;
+  z-index: 2;
   color: #fff;
   padding: 56px 18px;
-}
-.photo-break-content h2{
-  margin:0 0 10px;
-  font-size: 34px;
-  letter-spacing:-.5px;
-}
-.photo-break-content p{
-  margin:0;
-  max-width: 72ch;
-  opacity: .95;
-  font-weight:700;
 }
 
 /* Timeline + Callout */
