@@ -289,6 +289,53 @@ a:hover{ text-decoration:underline; text-decoration-color: rgba(11,94,215,.45); 
   padding: 18px;
   box-shadow: 0 18px 50px rgba(10,18,32,.10);
 }
+/* --- Chemistry: 3-up grid + full-width row --- */
+.cards-3{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Full-width card inside a 3-col grid */
+.card-span-all{
+  grid-column: 1 / -1;
+}
+
+/* Deliverables layout inside the full-width card */
+.deliverables{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px 18px;
+  margin-top: 12px;
+}
+
+.deliverables > div{
+  display:flex;
+  align-items:flex-start;
+  gap: 10px;
+  line-height: 1.4;
+}
+
+.deliverables .dot{
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  margin-top: 7px;
+  background: var(--blue);
+  flex: 0 0 auto;
+}
+
+/* Tablet */
+@media (max-width: 1024px){
+  .cards-3{ grid-template-columns: repeat(2, 1fr); }
+  .deliverables{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Mobile */
+@media (max-width: 680px){
+  .cards-3{ grid-template-columns: 1fr; }
+  .deliverables{ grid-template-columns: 1fr; }
+}
 .card h3{ margin: 0 0 10px; font-size: 18px; }
 .card ul{
   margin: 0;
