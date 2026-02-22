@@ -295,6 +295,26 @@ a:hover{ text-decoration:underline; text-decoration-color: rgba(11,94,215,.45); 
   padding-left: 18px;
   color: var(--muted);
 }
+/* 3-column layout */
+.cards-3{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Tablet */
+@media (max-width: 1024px){
+  .cards-3{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 680px){
+  .cards-3{
+    grid-template-columns: 1fr;
+  }
+}
 .card li{ margin: 8px 0; }
 
 .photo-card-inline{
