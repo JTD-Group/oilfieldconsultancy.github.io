@@ -123,12 +123,6 @@ a:hover{ text-decoration:underline; text-decoration-color:rgba(10,90,214,.4); }
   --headerH: 72px;  /* adjust if needed */
 }
 
-/* Lock header height */
-.site-header{
-  min-height: var(--headerH);
-  display:flex;
-  align-items:center;
-}
 
 /* Offset anchor scrolling */
 html{
