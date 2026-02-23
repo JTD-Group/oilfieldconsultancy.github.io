@@ -60,6 +60,16 @@ body{
   -moz-osx-font-smoothing:grayscale;
 }
 
+.logo {
+  height: 52px;
+  width: auto;
+  transition: transform .2s ease;
+}
+
+.logo:hover {
+  transform: scale(1.03);
+}
+
 /* ---- Anchor offset for sticky header ---- */
 :root{
   /* Adjust if your header height changes */
