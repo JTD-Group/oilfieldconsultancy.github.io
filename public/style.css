@@ -559,3 +559,194 @@ input:focus, textarea:focus{
 @media (prefers-reduced-motion: reduce){
   *{ transition:none !important; scroll-behavior:auto !important; }
 }
+/* ======================================================
+   CONTACT SECTION — Professional polish
+   Drop this at END of styles.css
+   ====================================================== */
+
+/* Section heading spacing */
+#contact .section-head{
+  margin-bottom: 20px;
+}
+#contact .section-head h2{
+  font-size: 34px;
+  letter-spacing: -0.6px;
+  margin-bottom: 8px;
+}
+#contact .section-head p{
+  font-size: 15px;
+  color: var(--muted);
+  max-width: 78ch;
+}
+
+/* Grid: better balance + consistent height */
+.contact-grid{
+  display:grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+/* Cards: calmer surface + consistent padding */
+.contact-card{
+  border-radius: 22px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.86);
+  box-shadow: 0 18px 55px rgba(10,18,32,.08);
+  padding: 22px;
+  overflow: hidden;
+}
+
+/* Card titles */
+.contact-card h3{
+  margin: 0 0 10px;
+  font-size: 18px;
+  letter-spacing: -0.2px;
+}
+
+/* Small intro text inside cards */
+.contact-card p{
+  margin: 0 0 14px;
+  color: var(--muted);
+  line-height: 1.55;
+  font-size: 14px;
+}
+
+/* "Email pill" button: looks premium */
+.contact-card .btn,
+.contact-card a.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  font-weight: 900;
+  letter-spacing: .1px;
+  border: 1px solid rgba(10,90,214,.22);
+  background: linear-gradient(135deg, rgba(10,90,214,1), rgba(60,147,255,.95));
+  color:#fff !important;
+  box-shadow: 0 14px 34px rgba(10,90,214,.18);
+  text-decoration: none !important;
+}
+.contact-card .btn:hover,
+.contact-card a.btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 18px 44px rgba(10,90,214,.22);
+}
+.contact-card .btn:focus,
+.contact-card a.btn:focus{
+  outline:none;
+  box-shadow: var(--ring), 0 18px 44px rgba(10,90,214,.20);
+}
+
+/* Make the left card content feel structured */
+.contact-card .contact-lines{
+  margin-top: 14px;
+  display:grid;
+  gap: 10px;
+}
+.contact-card .contact-lines > div{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 12px;
+  border: 1px solid var(--border);
+  background: rgba(243,246,255,.68);
+  padding: 12px 14px;
+  border-radius: 14px;
+}
+
+/* Labels in contact lines */
+.label{
+  color: rgba(71,86,111,.92);
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: .14px;
+  text-transform: uppercase;
+}
+
+/* Tighten the "service bullets" under the email */
+.contact-card ul:not(.check){
+  margin-top: 10px;
+}
+
+/* Form: elevate the rhythm & alignment */
+.form{
+  margin-top: 10px;
+}
+.form label{
+  display:block;
+  margin-top: 12px;
+  font-size: 12px;
+  letter-spacing: .14px;
+  text-transform: uppercase;
+  color: rgba(71,86,111,.92);
+  font-weight: 900;
+}
+
+/* Inputs: slimmer, more premium */
+input, textarea{
+  width:100%;
+  margin-top: 7px;
+  border-radius: 14px;
+  border: 1px solid rgba(10,18,32,.12);
+  background: rgba(255,255,255,.92);
+  padding: 12px 12px;
+  color: var(--text);
+  font: inherit;
+  transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+}
+input:hover, textarea:hover{
+  border-color: rgba(10,90,214,.20);
+  background: rgba(255,255,255,.98);
+}
+input:focus, textarea:focus{
+  outline:none;
+  border-color: rgba(10,90,214,.32);
+  box-shadow: var(--ring);
+}
+
+/* Textarea height: looks intentional */
+textarea{
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* Submit button spacing */
+.form .btn{
+  margin-top: 14px;
+}
+
+/* Disabled submit should look intentionally disabled */
+button[disabled],
+.btn[disabled],
+.btn:disabled{
+  opacity: .55;
+  cursor: not-allowed;
+  filter: saturate(.8);
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Tiny legal line: subtler */
+.tiny{
+  margin-top: 12px;
+  font-size: 12px;
+  color: rgba(71,86,111,.88);
+}
+.tiny a{
+  text-decoration: underline;
+  text-decoration-color: rgba(10,90,214,.35);
+}
+
+/* Responsive: stack cleanly */
+@media (max-width: 980px){
+  .contact-grid{
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .contact-card{
+    padding: 20px;
+  }
+}
