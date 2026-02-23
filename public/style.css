@@ -60,6 +60,23 @@ body{
   -moz-osx-font-smoothing:grayscale;
 }
 
+/* ---- Anchor offset for sticky header ---- */
+:root{
+  /* Adjust if your header height changes */
+  --headerH: 84px;
+}
+
+/* Makes browser anchor jumps account for sticky header */
+html{
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--headerH) + 14px);
+}
+
+/* Ensures each section heading isn’t hidden behind the sticky header */
+section[id], main [id]{
+  scroll-margin-top: calc(var(--headerH) + 14px);
+}
+
 a{ color:inherit; text-decoration:none; }
 a:hover{ text-decoration:underline; text-decoration-color:rgba(10,90,214,.4); }
 
