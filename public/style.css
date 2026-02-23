@@ -1,6 +1,7 @@
 /* =========================
-   High-end consultancy polish
-   Drop-in replacement for your style.css (keeps your class names)
+   High-end consultancy polish + consistent bullet styling
+   - All normal UL bullet lists now match your "deliverables" blue dot markers
+   - Check lists (.check) keep the ✓ symbols exactly as-is
    ========================= */
 
 /* Design tokens */
@@ -8,21 +9,21 @@
   /* Layout */
   --max: 1120px;
 
-  /* Core palette (crisper whites + deeper ink) */
-  --bg:#fbfcff;                 /* softer, premium white */
+  /* Core palette */
+  --bg:#fbfcff;
   --panel: rgba(255,255,255,.86);
   --panel-solid:#ffffff;
-  --panel2:#f3f6ff;             /* slightly richer than before */
+  --panel2:#f3f6ff;
 
-  --text:#0a1220;               /* ink */
-  --muted:#47566f;              /* cooler slate */
+  --text:#0a1220;
+  --muted:#47566f;
 
-  /* Brand accents (slightly deeper blue, restrained red) */
+  /* Brand */
   --blue:#0a5ad6;
   --blue2:#3c93ff;
   --red:#c81725;
 
-  /* Lines + elevation (more subtle, more “expensive”) */
+  /* Lines + elevation */
   --border: rgba(10,18,32,.10);
   --border-strong: rgba(10,18,32,.14);
 
@@ -38,7 +39,7 @@
   --r18: 18px;
   --r20: 20px;
 
-  /* Type scale */
+  /* Type */
   --fs-12: 12px;
   --fs-13: 13px;
   --fs-14: 14px;
@@ -47,6 +48,11 @@
 
   /* Motion */
   --ease: cubic-bezier(.2,.8,.2,1);
+
+  /* Consistent dot bullets */
+  --dot: 8px;                 /* size of the blue dot */
+  --dot-gap: 10px;            /* space between dot and text */
+  --dot-top: 7px;             /* vertical align like deliverables */
 }
 
 /* Ensure HTML hidden attribute always hides elements */
@@ -63,7 +69,6 @@ body{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* Softer, more “lux” background */
   background:
     radial-gradient(1200px 700px at 12% -10%, rgba(10,90,214,.10), transparent 60%),
     radial-gradient(900px 620px at 88% 0%, rgba(200,23,37,.07), transparent 60%),
@@ -99,15 +104,14 @@ a:hover{ text-decoration:underline; text-decoration-color: rgba(10,90,214,.45); 
 }
 
 /* =========================
-   Header / Nav (more premium)
+   Header / Nav
    ========================= */
 .site-header{
   position: sticky;
   top: 0;
   z-index: 50;
   border-bottom: 1px solid var(--border);
-  background:
-    linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.74));
+  background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.74));
   backdrop-filter: blur(10px);
 }
 
@@ -148,17 +152,9 @@ a:hover{ text-decoration:underline; text-decoration-color: rgba(10,90,214,.45); 
 }
 
 .brand-text{ display:flex; flex-direction:column; line-height:1.1; }
-.brand-name{
-  font-weight:900;
-  letter-spacing:.18px;
-}
-.brand-tag{
-  color:var(--muted);
-  font-size: var(--fs-12);
-  margin-top:4px;
-}
+.brand-name{ font-weight:900; letter-spacing:.18px; }
+.brand-tag{ color:var(--muted); font-size: var(--fs-12); margin-top:4px; }
 
-/* Nav menu */
 .menu{
   display:flex;
   align-items:center;
@@ -170,12 +166,8 @@ a:hover{ text-decoration:underline; text-decoration-color: rgba(10,90,214,.45); 
   font-size: var(--fs-14);
   letter-spacing:.12px;
 }
-.menu a:hover{
-  color: var(--text);
-  text-decoration:none;
-}
+.menu a:hover{ color: var(--text); text-decoration:none; }
 
-/* Mobile menu button */
 .menu-btn{
   display:none;
   width:44px;height:44px;
@@ -200,7 +192,7 @@ a:hover{ text-decoration:underline; text-decoration-color: rgba(10,90,214,.45); 
 }
 
 /* =========================
-   Hero (sharper typography)
+   Hero
    ========================= */
 .hero{
   display:grid;
@@ -311,7 +303,7 @@ a:hover{ text-decoration:underline; text-decoration-color: rgba(10,90,214,.45); 
 }
 
 /* =========================
-   Buttons (less “glossy”, more “consulting”)
+   Buttons
    ========================= */
 .btn{
   display:inline-flex;
@@ -357,10 +349,7 @@ a:hover{ text-decoration:underline; text-decoration-color: rgba(10,90,214,.45); 
   box-shadow: 0 22px 54px rgba(10,90,214,.20);
 }
 
-.btn-ghost{
-  background: rgba(255,255,255,.72);
-}
-
+.btn-ghost{ background: rgba(255,255,255,.72); }
 .btn-small{
   padding: 9px 12px;
   border-radius: var(--r12);
@@ -373,8 +362,7 @@ a:hover{ text-decoration:underline; text-decoration-color: rgba(10,90,214,.45); 
 .section{ padding: 70px 0; }
 
 .section-alt{
-  background:
-    linear-gradient(180deg, rgba(243,246,255,.92), rgba(255,255,255,0));
+  background: linear-gradient(180deg, rgba(243,246,255,.92), rgba(255,255,255,0));
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
@@ -388,7 +376,7 @@ a:hover{ text-decoration:underline; text-decoration-color: rgba(10,90,214,.45); 
 .section-head p{ margin:0; color: rgba(71,86,111,.95); }
 
 /* =========================
-   Cards (glass-lite, cleaner)
+   Cards
    ========================= */
 .cards{
   display:grid;
@@ -400,8 +388,7 @@ a:hover{ text-decoration:underline; text-decoration-color: rgba(10,90,214,.45); 
 .card{
   border-radius: var(--r20);
   border: 1px solid var(--border);
-  background:
-    linear-gradient(180deg, rgba(255,255,255,.86), rgba(255,255,255,.78));
+  background: linear-gradient(180deg, rgba(255,255,255,.86), rgba(255,255,255,.78));
   padding: 18px;
   box-shadow: var(--shadow-sm);
   transition: transform .15s var(--ease), box-shadow .15s var(--ease), border-color .15s var(--ease);
@@ -412,12 +399,74 @@ a:hover{ text-decoration:underline; text-decoration-color: rgba(10,90,214,.45); 
   box-shadow: 0 22px 60px rgba(10,18,32,.10);
 }
 .card h3{ margin: 0 0 10px; font-size: var(--fs-18); letter-spacing:-.2px; }
-.card ul{
+
+/* =========================
+   CONSISTENT BULLETS (blue dot markers)
+   - Applies to all ULs except .check (which keeps ✓)
+   - Matches your deliverables dot style across the page
+   ========================= */
+
+/* Default UL style reset (except check lists) */
+ul:not(.check){
+  list-style: none;
   margin: 0;
-  padding-left: 18px;
+  padding: 0;
   color: rgba(71,86,111,.95);
 }
-.card li{ margin: 8px 0; }
+
+/* List item layout */
+ul:not(.check) > li{
+  position: relative;
+  padding-left: calc(var(--dot) + var(--dot-gap) + 2px);
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+/* Blue dot bullet */
+ul:not(.check) > li::before{
+  content:"";
+  position:absolute;
+  left: 0;
+  top: var(--dot-top);
+  width: var(--dot);
+  height: var(--dot);
+  border-radius: 999px;
+  background: var(--blue);
+  box-shadow: 0 0 0 4px rgba(10,90,214,.10);
+}
+
+/* Nested ULs keep same style */
+ul:not(.check) ul{
+  margin-top: 8px;
+  padding-left: 0;
+}
+ul:not(.check) ul > li{
+  margin: 7px 0;
+  padding-left: calc(var(--dot) + var(--dot-gap) + 2px);
+}
+ul:not(.check) ul > li::before{
+  background: rgba(10,90,214,.85);
+  box-shadow: 0 0 0 4px rgba(10,90,214,.08);
+}
+
+/* If you have OLs, keep them readable */
+ol{
+  margin: 0;
+  padding-left: 20px;
+  color: rgba(71,86,111,.95);
+}
+ol li{ margin: 8px 0; }
+
+/* Keep the tick list exactly as-is */
+.check{ list-style:none; padding:0; margin:0; color: rgba(71,86,111,.95); }
+.check li{ padding-left: 26px; position:relative; margin: 10px 0; }
+.check li::before{
+  content:"✓";
+  position:absolute;
+  left:0; top:0;
+  color: var(--blue);
+  font-weight:900;
+}
 
 /* --- Chemistry: 3-up grid + full-width row --- */
 .cards-3{
@@ -429,7 +478,7 @@ a:hover{ text-decoration:underline; text-decoration-color: rgba(10,90,214,.45); 
 /* Full-width card inside a 3-col grid */
 .card-span-all{ grid-column: 1 / -1; }
 
-/* Deliverables layout inside the full-width card */
+/* Deliverables layout inside the full-width card (unchanged) */
 .deliverables{
   display:grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -449,6 +498,18 @@ a:hover{ text-decoration:underline; text-decoration-color: rgba(10,90,214,.45); 
   margin-top: 7px;
   background: var(--blue);
   flex: 0 0 auto;
+}
+
+/* Tablet */
+@media (max-width: 1024px){
+  .cards-3{ grid-template-columns: repeat(2, 1fr); }
+  .deliverables{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Mobile */
+@media (max-width: 680px){
+  .cards-3{ grid-template-columns: 1fr; }
+  .deliverables{ grid-template-columns: 1fr; }
 }
 
 /* Inline photo card variant */
@@ -478,16 +539,6 @@ a:hover{ text-decoration:underline; text-decoration-color: rgba(10,90,214,.45); 
   box-shadow: var(--shadow-sm);
 }
 
-.check{ list-style:none; padding:0; margin:0; color: rgba(71,86,111,.95); }
-.check li{ padding-left: 26px; position:relative; margin: 10px 0; }
-.check li::before{
-  content:"✓";
-  position:absolute;
-  left:0; top:0;
-  color: var(--blue);
-  font-weight:900;
-}
-
 /* Note / alert */
 .note{
   margin-top: 14px;
@@ -502,7 +553,7 @@ a:hover{ text-decoration:underline; text-decoration-color: rgba(10,90,214,.45); 
 .muted{ color: rgba(71,86,111,.95); }
 
 /* =========================
-   Photo break (cleaner overlay)
+   Photo break
    ========================= */
 .photo-break{
   position: relative;
@@ -526,8 +577,7 @@ a:hover{ text-decoration:underline; text-decoration-color: rgba(10,90,214,.45); 
 .photo-break-overlay{
   position:absolute;
   inset:0;
-  background:
-    linear-gradient(90deg, rgba(10,90,214,.72), rgba(200,23,37,.42));
+  background: linear-gradient(90deg, rgba(10,90,214,.72), rgba(200,23,37,.42));
   mix-blend-mode: multiply;
   z-index: 1;
   pointer-events: none;
@@ -582,7 +632,7 @@ a:hover{ text-decoration:underline; text-decoration-color: rgba(10,90,214,.45); 
 .callout p{ margin:0; color: rgba(71,86,111,.95); max-width: 72ch; }
 
 /* =========================
-   Contact (cleaner fields)
+   Contact
    ========================= */
 .contact-grid{
   display:grid;
@@ -607,7 +657,13 @@ a:hover{ text-decoration:underline; text-decoration-color: rgba(10,90,214,.45); 
   padding: 10px 12px;
   border-radius: var(--r14);
 }
-.label{ color: rgba(71,86,111,.95); font-weight:900; font-size: var(--fs-12); letter-spacing:.12px; }
+.label{
+  color: rgba(71,86,111,.95);
+  font-weight:900;
+  font-size: var(--fs-12);
+  letter-spacing:.12px;
+  text-transform: uppercase;
+}
 
 .form label{
   display:block;
@@ -673,6 +729,7 @@ button[disabled]{ opacity:.55; cursor:not-allowed; }
   text-decoration:none;
 }
 .footer-links a:hover{ color: var(--text); }
+
 .footer-bottom{
   margin-top: 16px;
   display:flex;
@@ -682,7 +739,7 @@ button[disabled]{ opacity:.55; cursor:not-allowed; }
 }
 
 /* =========================
-   Modal (more refined)
+   Modal
    ========================= */
 .no-scroll{ overflow:hidden; }
 .modal{
@@ -737,10 +794,6 @@ button[disabled]{ opacity:.55; cursor:not-allowed; }
 /* =========================
    Responsive
    ========================= */
-@media (max-width: 1024px){
-  .cards-3{ grid-template-columns: repeat(2, 1fr); }
-  .deliverables{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
 @media (max-width: 980px){
   .hero{ grid-template-columns: 1fr; }
   .cards{ grid-template-columns: 1fr; }
@@ -771,17 +824,13 @@ button[disabled]{ opacity:.55; cursor:not-allowed; }
   .photo-strip img{ height: 96px; }
   .callout{ flex-direction:column; align-items:flex-start; }
 }
-@media (max-width: 680px){
-  .cards-3{ grid-template-columns: 1fr; }
-  .deliverables{ grid-template-columns: 1fr; }
-}
 @media (max-width: 420px){
   .hero h1{ font-size: 34px; }
   .photo-strip{ grid-template-columns: 1fr; }
   .photo-strip img{ height: 140px; }
 }
 
-/* Accessibility: reduce motion */
+/* Accessibility */
 @media (prefers-reduced-motion: reduce){
   *{ transition:none !important; scroll-behavior:auto !important; }
 }
