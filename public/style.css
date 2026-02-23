@@ -114,6 +114,33 @@ a:hover{ text-decoration:underline; text-decoration-color:rgba(10,90,214,.4); }
   backdrop-filter:blur(12px);
 }
 
+/* =========================================
+   Sticky Header Anchor Offset Fix
+   ========================================= */
+
+/* Define exact header height */
+:root{
+  --headerH: 72px;  /* adjust if needed */
+}
+
+/* Lock header height */
+.site-header{
+  min-height: var(--headerH);
+  display:flex;
+  align-items:center;
+}
+
+/* Offset anchor scrolling */
+html{
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--headerH);
+}
+
+/* Ensure sections don’t hide under header */
+section[id],
+[id].section{
+  scroll-margin-top: var(--headerH);
+}
 .nav{
   display:flex;
   justify-content:space-between;
