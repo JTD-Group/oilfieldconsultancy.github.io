@@ -120,7 +120,7 @@ a:hover{ text-decoration:underline; text-decoration-color:rgba(10,90,214,.4); }
 
 /* Define exact header height */
 :root{
-  --headerH: 72px;  /* adjust if needed */
+  --headerH: 80px;  /* adjust if needed */
 }
 
 
