@@ -61,9 +61,8 @@ body{
 }
 
 .logo {
-  height: 52px;
+  height: 64px;
   width: auto;
-  transition: transform .2s ease;
 }
 
 .logo:hover {
@@ -145,14 +144,17 @@ section[id],
 [id].section{
   scroll-margin-top: var(--headerH);
 }
-.nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:16px;
-  padding:16px 0;
+.nav {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
 }
 
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 42px;
+}
 .brand{
   display:flex;
   align-items:center;
