@@ -128,6 +128,7 @@
         </div>
       </div>
     </section>
+
     <!-- Stimulation Chemistry -->
 <section id="chemistry" class="section">
   <div class="container">
@@ -361,32 +362,43 @@
             </div>
           </div>
 
-          <form class="form card" onsubmit="return false;" aria-label="Contact form (placeholder)">
+          <!-- CHANGED: Enabled form + wired to Formspree + proper submit button -->
+          <form
+            class="form card"
+            action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+            method="POST"
+            aria-label="Contact form"
+          >
             <h3>Quick note</h3>
-            <p class="muted">Static placeholder (disabled). Ask me to wire to Formspree/Basin/etc.</p>
+            <p class="muted">Send a note and we’ll respond promptly.</p>
 
             <label>
               Name
-              <input type="text" placeholder="Your name" autocomplete="name" />
+              <input name="name" type="text" placeholder="Your name" autocomplete="name" required />
             </label>
 
             <label>
               Company
-              <input type="text" placeholder="Company" autocomplete="organization" />
+              <input name="company" type="text" placeholder="Company" autocomplete="organization" />
             </label>
 
             <label>
               Email
-              <input type="email" placeholder="name@company.com" autocomplete="email" />
+              <input name="email" type="email" placeholder="name@company.com" autocomplete="email" required />
             </label>
 
             <label>
               Message
-              <textarea rows="5" placeholder="Brief scope, basin/field, timeline, and what you need reviewed."></textarea>
+              <textarea name="message" rows="5" placeholder="Brief scope, basin/field, timeline, and what you need reviewed." required></textarea>
             </label>
 
-            <button class="btn btn-primary" type="button" disabled title="Static placeholder">
-              Submit (disabled)
+            <!-- Helps Formspree email subject -->
+            <input type="hidden" name="_subject" value="New inquiry via jtd-group.com" />
+            <!-- Optional: redirect after submit -->
+            <input type="hidden" name="_redirect" value="#contact" />
+
+            <button class="btn btn-primary" type="submit">
+              Submit
             </button>
 
             <p class="tiny">
@@ -429,9 +441,60 @@
       </div>
       <div class="modal-body">
         <p>
-          Information provided on this website is for general informational purposes only and does not constitute
-          engineering approval or a guarantee of results. Consulting services are subject to a written agreement
-          defining scope, deliverables, responsibilities, limitations, and fees.
+          You can use the following as polished, customer‑facing **Terms of Service** for an oilfield consultancy website. The language is written to be clear, professional, and suitable for a commercial services business, while avoiding unnecessary legal complexity. You can adapt it to your jurisdiction or add legal review if needed.
+
+---
+
+## Terms of Service for Oilfield Consultancy Services
+
+### 1. Introduction  
+These Terms of Service govern your use of our website and any consultancy services provided by our firm. By accessing our site or engaging our services, you agree to these terms. If you do not agree, please discontinue use of the site.
+
+### 2. Scope of Services  
+We provide technical, operational, regulatory, and strategic consultancy services to clients in the oil and gas sector. All services are delivered based on the information provided by the client and are intended to support decision‑making, not replace it. Final operational, financial, and safety decisions remain the responsibility of the client.
+
+### 3. Professional Standards  
+We aim to deliver accurate, reliable, and industry‑aligned insights. However, due to the complex and variable nature of oilfield operations, we do not guarantee specific outcomes, production results, regulatory approvals, or financial performance.
+
+### 4. Client Responsibilities  
+Clients agree to:  
+- Provide complete and accurate information relevant to the project.  
+- Ensure that any data, documents, or materials shared with us do not infringe on third‑party rights.  
+- Use our recommendations responsibly and in compliance with applicable laws, regulations, and safety standards.
+
+### 5. Confidentiality  
+We treat all client information as confidential and use it solely for the purpose of delivering contracted services. We may share information only when required by law or with explicit client consent.
+
+### 6. Intellectual Property  
+All reports, analyses, models, and deliverables produced by our consultancy remain our intellectual property unless otherwise agreed in writing. Clients receive a non‑exclusive license to use deliverables for internal business purposes.
+
+### 7. Website Use  
+The content on this website—including text, graphics, and downloadable materials—is provided for general information only. It does not constitute professional advice. Unauthorized reproduction, distribution, or modification of website content is prohibited.
+
+### 8. Fees and Payment  
+Fees for consultancy services will be outlined in a proposal or contract prior to engagement. Payment terms must be followed as stated. Late payments may incur additional charges.
+
+### 9. Limitation of Liability  
+To the fullest extent permitted by law, we are not liable for:  
+- Indirect, incidental, or consequential damages.  
+- Operational losses, downtime, or production impacts resulting from the use of our recommendations.  
+- Decisions made by the client based on our analysis or reports.
+
+Our total liability for any claim is limited to the amount paid by the client for the specific service giving rise to the claim.
+
+### 10. Third‑Party Links  
+Our website may contain links to third‑party sites. We are not responsible for the content, accuracy, or practices of external websites.
+
+### 11. Changes to Terms  
+We may update these Terms of Service periodically. Continued use of the website or our services after changes are posted constitutes acceptance of the revised terms.
+
+### 12. Governing Law  
+These terms are governed by the laws of the jurisdiction in which our company is registered, unless otherwise specified in a client contract.
+
+---
+
+If you want, I can also create matching **Privacy Policy**, **Disclaimer**, or **Service Level Agreement** text so your entire site has a consistent professional tone.
+
         </p>
         <p>
           Client confidentiality is respected and may be governed by NDA. Do not transmit sensitive information unless requested.
@@ -450,8 +513,99 @@
       </div>
       <div class="modal-body">
         <p>
-          This site does not intentionally collect personal information. If you contact via email, your message and email address
-          will be used solely to respond and may be retained for record-keeping.
+          A clear, professional **Privacy Policy** for an oilfield consultancy site works best when it explains what data you collect, why you collect it, and how it’s protected—without overwhelming the reader. The version below is written to match the tone and structure of the Terms you already have.
+
+---
+
+## Privacy Policy for Oilfield Consultancy Services
+
+### 1. Overview  
+This Privacy Policy explains how we collect, use, store, and protect personal information when you visit our website or engage our consultancy services. By using our site or providing information to us, you consent to the practices described here.
+
+### 2. Information We Collect  
+We may collect the following types of information:
+
+- **Contact details** — such as name, email address, phone number, and company information submitted through forms or inquiries.  
+- **Project‑related information** — data, documents, and operational details shared for consultancy purposes.  
+- **Website usage data** — including IP address, browser type, device information, and pages visited, collected through analytics tools.  
+- **Cookies and tracking technologies** — used to improve site performance and user experience.
+
+### 3. How We Use Your Information  
+We use collected information to:
+
+- Provide consultancy services and respond to inquiries.  
+- Prepare proposals, reports, and technical analyses.  
+- Improve website functionality and user experience.  
+- Maintain internal records and comply with legal obligations.  
+- Communicate updates, service information, or administrative notices.
+
+We do **not** sell or rent personal information to third parties.
+
+### 4. Legal Basis for Processing  
+Depending on your location, we may process personal data under one or more of the following bases:
+
+- Performance of a contract.  
+- Legitimate business interests.  
+- Compliance with legal or regulatory requirements.  
+- Consent, where explicitly provided.
+
+### 5. Sharing of Information  
+We may share information only in the following circumstances:
+
+- With trusted service providers who support our operations (e.g., IT, analytics, secure storage).  
+- When required by law, regulation, or legal process.  
+- With your explicit consent for specific purposes.
+
+All third‑party partners are required to maintain confidentiality and data protection standards.
+
+### 6. Data Security  
+We implement technical and organizational measures to protect personal information from unauthorized access, alteration, disclosure, or loss. While no system is completely secure, we continuously review and enhance our security practices.
+
+### 7. Data Retention  
+We retain personal information only as long as necessary to:
+
+- Deliver consultancy services,  
+- Meet contractual or legal obligations, or  
+- Support legitimate business needs.
+
+When data is no longer required, it is securely deleted or anonymized.
+
+### 8. Your Rights  
+Depending on your jurisdiction, you may have rights such as:
+
+- Access to the personal data we hold about you.  
+- Correction of inaccurate or incomplete information.  
+- Request for deletion of your data, where legally permissible.  
+- Restriction or objection to certain types of processing.  
+- Data portability for information you have provided.
+
+Requests can be submitted through our contact page or by email.
+
+### 9. Cookies and Tracking  
+Our website may use cookies to:
+
+- Improve site performance,  
+- Analyze traffic patterns,  
+- Remember user preferences.
+
+You can adjust your browser settings to refuse cookies, though some site features may not function properly.
+
+### 10. Third‑Party Links  
+Our website may contain links to external sites. We are not responsible for the privacy practices or content of those websites. We encourage users to review the privacy policies of any third‑party sites they visit.
+
+### 11. Children’s Privacy  
+Our services are intended for business and professional use. We do not knowingly collect personal information from children under 16.
+
+### 12. Changes to This Policy  
+We may update this Privacy Policy periodically. The “Last Updated” date will reflect the most recent revision. Continued use of our website or services indicates acceptance of any changes.
+
+### 13. Contact Information  
+For questions about this Privacy Policy or to exercise your data rights, please contact us through the details provided on our website.
+
+---
+
+If you want, I can also prepare a **Disclaimer**, **Cookie Policy**, or a combined **Legal & Compliance** page so the whole site has a consistent, professional legal framework.
+
         </p>
         <p>
           If a third-party form provider is enabled later, data handling will also follow that provider’s policies.
@@ -505,5 +659,22 @@
       if (e.key === "Escape") closeModal();
     });
   </script>
+
+  <!-- CHANGED: minimal CSS patch to force top alignment + consistent card sizing -->
+  <style>
+    /* Keep everything else intact — this is only a small patch to fix the contact alignment. */
+    .contact-grid{
+      align-items: start; /* ensures both cards align at the top */
+    }
+    .contact-card,
+    .form.card{
+      height: 100%; /* helps even-out card heights when grid rows stretch */
+      margin: 0;    /* prevents accidental margin offsets */
+    }
+    .contact-card h3,
+    .form.card h3{
+      margin-top: 0; /* removes default top margin that can create misalignment */
+    }
+  </style>
 </body>
 </html>
